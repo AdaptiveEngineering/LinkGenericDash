@@ -1,0 +1,19 @@
+{
+  "name": "LinkGenericDash",
+  "version": "1.0.0",
+  "description": "Parses the Link Generic Dash CAN Frame stream and provides ECU runtime values, fault codes and statuses to your project.",
+  "keywords": "arduino, esp32, can bus, canbus, link, linkecu, link ecu, g4+, g4x, g5, generic dash",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AdaptiveEngineering/LinkGenericDash.git"
+  },
+  "authors": {
+    "name": "Adaptive Engineering",
+    "url": "https://github.com/AdaptiveEngineering/"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/AdaptiveEngineering/",
+  "frameworks": "*",
+  "platforms": "*",
+  "headers": "link_generic_dash.h"
+}

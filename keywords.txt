@@ -1,0 +1,36 @@
+# LinkGenericDash
+
+GenericDashParameters                       KEYWORD1
+GenericDashLimitFlags                       KEYWORD1
+GenericDashFeatureStatuses                  KEYWORD1
+GenericDashStatesAntiLag                    KEYWORD1
+GenericDashStatesLaunchControl              KEYWORD1
+GenericDashStatesTractionControl            KEYWORD1
+GenericDashStatesCruiseControl              KEYWORD1
+LinkECUFaultCodes                           KEYWORD1
+
+parseGenericDashCanFrame                    KEYWORD2
+getGenericDashValue                         KEYWORD2
+getGenericDashLimitFlag                     KEYWORD2
+getGenericDashFeatureStatus                 KEYWORD2
+getGenericDashParameterName                 KEYWORD2
+getGenericDashParameterUom                  KEYWORD2
+getGenericDashParameterDecimalPlaces        KEYWORD2
+getGenericDashParameterMinimumValue         KEYWORD2
+getGenericDashParameterMaximumValue         KEYWORD2
+getGenericDashLimitFlagName                 KEYWORD2
+getLinkECUFaultCode                         KEYWORD2
+
+NO_DASH_VALUE_STRINGS                       LITERAL1
+NO_FAULT_CODE_STRINGS                       LITERAL1
+maxGenericDashParameterNameLength           LITERAL1
+maxGenericDashParameterUomLength            LITERAL1
+maxLinkECUFaultCodeStringLength             LITERAL1
+Generic_Dash_Parameter_Count                LITERAL1
+Generic_Dash_Limit_Flag_Count               LITERAL1
+Generic_Dash_Feature_Statuses_Count         LITERAL1
+Generic_Dash_States_AntiLag_Count           LITERAL1
+Generic_Dash_States_Launch_Control_Count    LITERAL1
+Generic_Dash_States_Traction_Control_Count  LITERAL1
+Generic_Dash_States_Cruise_Control_Count    LITERAL1
+Link_ECU_Fault_Code_Count                   LITERAL1
