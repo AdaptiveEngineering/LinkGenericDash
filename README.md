@@ -76,15 +76,15 @@ Adding the following will enable this library in your code:
 
 If you need to limit the footprint of this library, you can selectively disable
 features as required by adding the following before the above `#include` line:
-- `#define NO_FAULT_CODE_STRINGS` will remove all fault code strings - this
-  will dramatically reduce requirements of this library but the following calls
-  will no longer be available:
+- `#define NO_FAULT_CODE_STRINGS` will remove all the fault code strings - this
+  will dramatically reduce the footprint of this library, however the following
+  calls will no longer be available:
+  - `getLinkECUFaultCode`
+- `#define NO_DASH_VALUE_STRINGS` can be used if you _really_ need to scrape
+  the barrel to reduce flash and RAM usage - this is ideal for ATTiny85-like
+  devices but the following calls will no longer be available:
   - `getGenericDashParameterName`
   - `getGenericDashLimitFlagName`
-- `#define NO_DASH_VALUE_STRINGS` can be used if you _really_ need to scrape
-  the barrel to reduce resource usage and this is ideal for ATTiny85-like
-  devices but the following calls will no longer be available:
-  - `getLinkECUFaultCode`
 
 ## Basic Usage
 
@@ -123,14 +123,14 @@ All of the below functions are documented in `link_generic_dash.h` in such a
 way that PlatformIO / VSCode / Doxygen picks them up nicely. Here you can
 find some usage examples as well:
 
-#### bool parseGenericDashCanFrame(unsigned char frame[8]);
+### bool parseGenericDashCanFrame(unsigned char frame[8]);
 
 This is described in the [Basic Usage](#basic-usage) section above. Feeding
 this CAN frames with the desired CAN ID will update the internal registers
 so you can poll this library for the information you desire. It returns true
 on successful decode or false if it couldn't be decoded.
 
-#### float getGenericDashValue(GenericDashParameters param);
+### float getGenericDashValue(GenericDashParameters param);
 
 This is also described in the [Basic Usage](#basic-usage) section above,
 you can find a list of requestable values in `link_generic_dash.h`.
@@ -152,7 +152,7 @@ The following dash values require special consideration:
 - `ECU_STATUS_BITFIELD` is much the same as ECU_LIMIT_FLAGS_BITFIELD above and
   has its own helper function `getGenericDashFeatureStatus` as documented below
 
-#### bool getGenericDashLimitFlag(GenericDashLimitFlags param);
+### bool getGenericDashLimitFlag(GenericDashLimitFlags param);
 
 A limit flag is a boolean true / false on whether a particular limit or feature
 in the Link ECU is currently active, for example the RPM or speed limiters, or
@@ -168,7 +168,7 @@ Usage example:
 
 The full list of limit flags can be found in `link_generic_dash.h`.
 
-#### unsigned char getGenericDashFeatureStatus(GenericDashFeatureStatuses param);
+### unsigned char getGenericDashFeatureStatus(GenericDashFeatureStatuses param);
 
 This operates similar to the limit flags above but gets the status of one of
 a few additional Link ECU features such as launch control, cruise control etc.
@@ -197,8 +197,8 @@ The full list of feature flags and particular feature statuses can be found in
 `link_generic_dash.h`.
 
 
-#### int getGenericDashParameterName(GenericDashParameters param, char* dashParameterInfo);
-#### int getGenericDashParameterUom(GenericDashParameters param, char* dashParameterUom);
+### int getGenericDashParameterName(GenericDashParameters param, char* dashParameterInfo);
+### int getGenericDashParameterUom(GenericDashParameters param, char* dashParameterUom);
 
 _Only available if `NO_DASH_VALUE_STRINGS` is not defined_
 
@@ -230,9 +230,9 @@ The below example demonstrates the usage of both of these functions:
   }
 ```
 
-#### signed int getGenericDashParameterDecimalPlaces(GenericDashParameters param);
-#### signed int getGenericDashParameterMinimumValue(GenericDashParameters param);
-#### signed int getGenericDashParameterMaximumValue(GenericDashParameters param);
+### signed int getGenericDashParameterDecimalPlaces(GenericDashParameters param);
+### signed int getGenericDashParameterMinimumValue(GenericDashParameters param);
+### signed int getGenericDashParameterMaximumValue(GenericDashParameters param);
 
 _Only available if `NO_DASH_VALUE_STRINGS` is not defined_
 
@@ -269,7 +269,7 @@ a value with a decimal place:
 The min and max functions just return the absolute minimum and absolute
 maximum this value can be. These may be useful for setting up graphing.
 
-#### int getGenericDashLimitFlagName(GenericDashLimitFlags param, char* dashLimitFlagInfo);
+### int getGenericDashLimitFlagName(GenericDashLimitFlags param, char* dashLimitFlagInfo);
 
 _Only available if `NO_DASH_VALUE_STRINGS` is not defined_
 
@@ -288,7 +288,7 @@ it returns the specified limit flag name. Here is a quick example of use:
   }
 ```
 
-#### int getLinkECUFaultCode(LinkECUFaultCodes param, char* faultCodeInfo);
+### int getLinkECUFaultCode(LinkECUFaultCodes param, char* faultCodeInfo);
 
 _Only available if `NO_FAULT_CODE_STRINGS` is not defined_
 
