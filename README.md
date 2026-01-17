@@ -53,7 +53,7 @@ This library should be compatible with both PlatformIO and Arduino IDE.
 PlatformIO users add this to your `platformio.ini` file under `lib_deps`:
 
 ```ini
-	jasongaunt/LinkGenericDash@^1.0.0
+	adaptiveengineering/LinkGenericDash@^1.0.0
 ```
 
 ### Arduino IDE
